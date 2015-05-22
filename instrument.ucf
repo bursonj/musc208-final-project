@@ -1,0 +1,22 @@
+NET "clck" LOC = "V10";
+
+NET "notes(0)" = "T5";
+NET "notes(1)" = "V8";
+NET "notes(2)" = "U8";
+NET "notes(3)" = "N8";
+NET "notes(4)" = "M8";
+NET "notes(5)" = "V9";
+NET "notes(6)" = "T9";
+NET "notes(7)" = "T10";
+
+NET "dac(0)" = "R32";
+NET "dac(1)" = "R30";
+NET "dac(2)" = "R28";
+NET "dac(3)" = "R26";
+NET "dac(4)" = "R23";
+NET "dac(5)" = "R21";
+NET "dac(6)" = "R19";
+NET "dac(7)" = "R17";
+NET "dac(8)" = "R15";
+NET "dac(9)" = "R13";
+NET "dac(10)" = "R11";
