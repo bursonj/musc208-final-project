@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/cal/Intstrument/instrument/controller.ncd
+OUTFILE=/home/cal/Intstrument/instrument/controller.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=/home/cal/Intstrument/instrument
+LICENSE=WebPack
+USER_INFO=211017461_0_0_056
