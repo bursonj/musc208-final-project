@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 0.01 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 0.01 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Reading design: controller.prj
@@ -392,13 +392,13 @@ clck           |    3.238|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 30.00 secs
-Total CPU time to Xst completion: 5.02 secs
+Total REAL time to Xst completion: 23.00 secs
+Total CPU time to Xst completion: 4.96 secs
  
 --> 
 
 
-Total memory usage is 127464 kilobytes
+Total memory usage is 127412 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   15 (   0 filtered)
