@@ -98,11 +98,53 @@ architecture Behavioral of controller is
   
 begin
 
-  scale_clock_1 : entity work.scale_clock_c4
+  scale_clock_c4_1 : entity work.scale_clock_c4
     port map (
       clk_50Mhz => clck,
       rst       => reseter,
-      clk_2Hz    => c4_osc);
+      clk_c4    => c4_osc);
+
+  scale_clock_d4_1: entity work.scale_clock_d4
+    port map (
+      clk_50Mhz => clck,
+      rst       => reseter,
+      clk_d4    => d4_osc);
+
+  scale_clock_e4_1: entity work.scale_clock_e4
+    port map (
+      clk_50Mhz => clck,
+      rst       => reseter,
+      clk_e4    => e4_osc);
+
+  scale_clock_f4_1: entity work.scale_clock_f4
+    port map (
+      clk_50Mhz => clck,
+      rst       => reseter,
+      clk_f4    => f4_osc);
+
+  scale_clock_g4_1: entity work.scale_clock_g4
+    port map (
+      clk_50Mhz => clck,
+      rst       => reseter,
+      clk_g4    => g4_osc);
+
+  scale_clock_a4_1: entity work.scale_clock_a4
+    port map (
+      clk_50Mhz => clck,
+      rst       => reseter,
+      clk_a4    => a4_osc);
+
+  scale_clock_b4_1: entity work.scale_clock_b4
+    port map (
+      clk_50Mhz => clck,
+      rst       => reseter,
+      clk_b4    => b4_osc);
+
+  scale_clock_c5_1: entity work.scale_clock_c5
+    port map (
+      clk_50Mhz => clck,
+      rst       => reseter,
+      clk_c5    => c5_osc);
 
   c4_out <= c4_osc and notes(0);
   d4_out <= d4_osc and notes(1);
@@ -118,10 +160,10 @@ begin
   e4_out2 <= "00000000" when e4_out = '0' else "11111111";
   f4_out2 <= "00000000" when f4_out = '0' else "11111111";
   g4_out2 <= "00000000" when g4_out = '0' else "11111111";
-  a5_out2 <= "00000000" when a5_out = '0' else "11111111";
-  b5_out2 <= "00000000" when b5_out = '0' else "11111111";
+  a4_out2 <= "00000000" when a4_out = '0' else "11111111";
+  b4_out2 <= "00000000" when b4_out = '0' else "11111111";
   c5_out2 <= "00000000" when c5_out = '0' else "11111111";
 
-  dac <= std_logic_vector(resize(unsigned(c4_out2) + unsigned(d4_out2) + unsigned(e4_out2) + unsigned(f4_out2) + unsigned(g4_out2) + unsigned(a5_out2) + unsigned(b5_out2) + unsigned(c5_out2), 11));
+  dac <= std_logic_vector(resize(unsigned(c4_out2) + unsigned(d4_out2) + unsigned(e4_out2) + unsigned(f4_out2) + unsigned(g4_out2) + unsigned(a4_out2) + unsigned(b4_out2) + unsigned(c5_out2), 11));
   
 end Behavioral;

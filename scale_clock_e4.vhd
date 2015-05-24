@@ -2,14 +2,14 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.all;
 
-entity scale_clock is
+entity scale_clock_e4 is
   port (
     clk_50Mhz : in  std_logic;
     rst       : in  std_logic;
     clk_e4   : out std_logic);
-end scale_clock;
+end scale_clock_e4;
 
-architecture Behavioral of scale_clock is
+architecture Behavioral of scale_clock_e4 is
 
   signal prescaler : unsigned(23 downto 0);
   signal clk_330Hz_i : std_logic;
