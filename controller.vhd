@@ -53,7 +53,7 @@ begin
     port map (
       clk_50Mhz => clck,
       rst       => reseter,
-      clk_c4    => c4_out);
+      clk_2Hz    => c4_osc);
 
   c4_out <= c4_osc and notes(0);
   d4_out <= d4_osc and notes(1);
@@ -64,16 +64,16 @@ begin
   b5_out <= b5_osc and notes(6);
   c5_out <= c5_osc and notes(7);
 
-  c4_out2 <= '00000000' when not(c4_out) else '11111111';
-  d4_out2 <= '00000000' when not(d4_out) else '11111111';
-  e4_out2 <= '00000000' when not(e4_out) else '11111111';
-  f4_out2 <= '00000000' when not(f4_out) else '11111111';
-  g4_out2 <= '00000000' when not(g4_out) else '11111111';
-  a5_out2 <= '00000000' when not(a5_out) else '11111111';
-  b5_out2 <= '00000000' when not(b5_out) else '11111111';
-  c5_out2 <= '00000000' when not(c5_out) else '11111111';
+  c4_out2 <= "00000000" when c4_out = '0' else "11111111";
+  d4_out2 <= "00000000" when d4_out = '0' else "11111111";
+  e4_out2 <= "00000000" when e4_out = '0' else "11111111";
+  f4_out2 <= "00000000" when f4_out = '0' else "11111111";
+  g4_out2 <= "00000000" when g4_out = '0' else "11111111";
+  a5_out2 <= "00000000" when a5_out = '0' else "11111111";
+  b5_out2 <= "00000000" when b5_out = '0' else "11111111";
+  c5_out2 <= "00000000" when c5_out = '0' else "11111111";
 
-  dac <= std_logic_vector(unsigned(c4_out) + unsigned(d4_out) + unsigned(e4_out) + unsigned(f4_out) + unsigned(g4_out) + unsigned(a5_out) + unsigned(b5_out) + unsigned(c5_out));
+  dac <= std_logic_vector(resize(unsigned(c4_out2) + unsigned(d4_out2) + unsigned(e4_out2) + unsigned(f4_out2) + unsigned(g4_out2) + unsigned(a5_out2) + unsigned(b5_out2) + unsigned(c5_out2), 11));
 
   
 end Behavioral;
