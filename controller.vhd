@@ -12,19 +12,61 @@ end controller;
 
 architecture Behavioral of controller is
 
-  component scale_clock is
+  component scale_clock_c4 is
     port (
       clk_50Mhz : in  std_logic;
       rst       : in  std_logic;
-      clk_c4   : out std_logic;
-      clk_d4   : out std_logic;
-      clk_e4   : out std_logic;
-      clk_f4   : out std_logic;
-      clk_g4   : out std_logic;
-      clk_a4   : out std_logic;
-      clk_b4   : out std_logic;    
-      clk_c5   : out std_logic;
-  end component scale_clock;
+      clk_c4   : out std_logic);
+  end component scale_clock_c4;
+
+  component scale_clock_d4 is
+    port (
+      clk_50Mhz : in  std_logic;
+      rst       : in  std_logic;
+      clk_d4   : out std_logic);
+  end component scale_clock_d4;
+  
+  component scale_clock_e4 is
+    port (
+      clk_50Mhz : in  std_logic;
+      rst       : in  std_logic;
+      clk_e4   : out std_logic);
+  end component scale_clock_e4;
+  
+  component scale_clock_f4 is
+    port (
+      clk_50Mhz : in  std_logic;
+      rst       : in  std_logic;
+      clk_f4   : out std_logic);
+  end component scale_clock_f4;
+  
+  component scale_clock_g4 is
+    port (
+      clk_50Mhz : in  std_logic;
+      rst       : in  std_logic;
+      clk_g4   : out std_logic);
+  end component scale_clock_g4;
+  
+  component scale_clock_a4 is
+    port (
+      clk_50Mhz : in  std_logic;
+      rst       : in  std_logic;
+      clk_a4   : out std_logic);
+  end component scale_clock_a4;
+  
+  component scale_clock_b4 is
+    port (
+      clk_50Mhz : in  std_logic;
+      rst       : in  std_logic;
+      clk_b4   : out std_logic);
+  end component scale_clock_b4;
+  
+  component scale_clock_c5 is
+    port (
+      clk_50Mhz : in  std_logic;
+      rst       : in  std_logic;
+      clk_c5   : out std_logic);
+  end component scale_clock_c5 ;
 
   signal c4_osc : std_logic := '0';
   signal d4_osc : std_logic := '0';
@@ -56,7 +98,7 @@ architecture Behavioral of controller is
   
 begin
 
-  scale_clock_1 : entity work.scale_clock
+  scale_clock_1 : entity work.scale_clock_c4
     port map (
       clk_50Mhz => clck,
       rst       => reseter,
