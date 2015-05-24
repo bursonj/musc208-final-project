@@ -87,14 +87,14 @@ begin
         prescaler_b4 <= prescaler_b4 - 1;
       end if;
 
-      prescaler_c4 <= prescalar_c4 -1;
-      prescaler_d4 <= prescalar_d4 -1;
-      prescaler_e4 <= prescalar_e4 -1;
-      prescaler_f4 <= prescalar_f4 -1;
-      prescaler_g4 <= prescalar_g4 -1;
-      prescaler_a4 <= prescalar_a4 -1;
-      prescaler_b4 <= prescalar_b4 -1;
-      prescaler_c5 <= prescalar_c5 -1;
+      prescaler_c4 <= prescalar_c4 +1;
+      prescaler_d4 <= prescalar_d4 +1;
+      prescaler_e4 <= prescalar_e4 +1;
+      prescaler_f4 <= prescalar_f4 +1;
+      prescaler_g4 <= prescalar_g4 +1;
+      prescaler_a4 <= prescalar_a4 +1;
+      prescaler_b4 <= prescalar_b4 +1;
+      prescaler_c5 <= prescalar_c5 +1;
     end if;
   end process gen_clk;
 
