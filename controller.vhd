@@ -16,7 +16,14 @@ architecture Behavioral of controller is
     port (
       clk_50Mhz : in  std_logic;
       rst       : in  std_logic;
-      clk_2Hz   : out std_logic);
+      clk_c4   : out std_logic;
+      clk_d4   : out std_logic;
+      clk_e4   : out std_logic;
+      clk_f4   : out std_logic;
+      clk_g4   : out std_logic;
+      clk_a4   : out std_logic;
+      clk_b4   : out std_logic;    
+      clk_c5   : out std_logic;
   end component scale_clock;
 
   signal c4_osc : std_logic := '0';
@@ -24,16 +31,16 @@ architecture Behavioral of controller is
   signal e4_osc : std_logic := '0';
   signal f4_osc : std_logic := '0';
   signal g4_osc : std_logic := '0';
-  signal a5_osc : std_logic := '0';
-  signal b5_osc : std_logic := '0';
+  signal a4_osc : std_logic := '0';
+  signal b4_osc : std_logic := '0';
   signal c5_osc : std_logic := '0';
   signal c4_out : std_logic := '0';
   signal d4_out : std_logic := '0';
   signal e4_out : std_logic := '0';
   signal f4_out : std_logic := '0';
   signal g4_out : std_logic := '0';
-  signal a5_out : std_logic := '0';
-  signal b5_out : std_logic := '0';
+  signal a4_out : std_logic := '0';
+  signal b4_out : std_logic := '0';
   signal c5_out : std_logic := '0';
 
   signal c4_out2 : std_logic_vector(0 to 7);
@@ -41,8 +48,8 @@ architecture Behavioral of controller is
   signal e4_out2 : std_logic_vector(0 to 7);
   signal f4_out2 : std_logic_vector(0 to 7);
   signal g4_out2 : std_logic_vector(0 to 7);
-  signal a5_out2 : std_logic_vector(0 to 7);
-  signal b5_out2 : std_logic_vector(0 to 7);
+  signal a4_out2 : std_logic_vector(0 to 7);
+  signal b4_out2 : std_logic_vector(0 to 7);
   signal c5_out2 : std_logic_vector(0 to 7);
 
   signal reseter : std_logic := '0';
@@ -60,8 +67,8 @@ begin
   e4_out <= e4_osc and notes(2);
   f4_out <= f4_osc and notes(3);
   g4_out <= g4_osc and notes(4);
-  a5_out <= a5_osc and notes(5);
-  b5_out <= b5_osc and notes(6);
+  a4_out <= a4_osc and notes(5);
+  b4_out <= b4_osc and notes(6);
   c5_out <= c5_osc and notes(7);
 
   c4_out2 <= "00000000" when c4_out = '0' else "11111111";
@@ -74,6 +81,5 @@ begin
   c5_out2 <= "00000000" when c5_out = '0' else "11111111";
 
   dac <= std_logic_vector(resize(unsigned(c4_out2) + unsigned(d4_out2) + unsigned(e4_out2) + unsigned(f4_out2) + unsigned(g4_out2) + unsigned(a5_out2) + unsigned(b5_out2) + unsigned(c5_out2), 11));
-
   
 end Behavioral;
