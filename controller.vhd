@@ -16,17 +16,6 @@ architecture Behavioral of controller is
     port (
       clk_50Mhz : in  std_logic;
       rst       : in  std_logic;
-<<<<<<< HEAD
-      clk_c4   : out std_logic;
-      clk_d4   : out std_logic;
-      clk_e4   : out std_logic;
-      clk_f4   : out std_logic;
-      clk_g4   : out std_logic;
-      clk_a4   : out std_logic;
-      clk_b4   : out std_logic;    
-      clk_c5   : out std_logic);
-  end component scale_clock;
-=======
       clk_c4   : out std_logic);
   end component scale_clock_c4;
 
@@ -78,7 +67,6 @@ architecture Behavioral of controller is
       rst       : in  std_logic;
       clk_c5   : out std_logic);
   end component scale_clock_c5 ;
->>>>>>> Joe
 
   signal c4_osc : std_logic := '0';
   signal d4_osc : std_logic := '0';
@@ -88,6 +76,7 @@ architecture Behavioral of controller is
   signal a4_osc : std_logic := '0';
   signal b4_osc : std_logic := '0';
   signal c5_osc : std_logic := '0';
+ 
   signal c4_out : std_logic := '0';
   signal d4_out : std_logic := '0';
   signal e4_out : std_logic := '0';
@@ -156,16 +145,6 @@ begin
     port map (
       clk_50Mhz => clck,
       rst       => reseter,
-<<<<<<< HEAD
-      clk_c4    => c4_osc,
-      clk_d4    => d4_osc,
-      clk_e4    => e4_osc,
-      clk_f4    => f4_osc,
-      clk_g4    => g4_osc,
-      clk_a4    => a4_osc,
-      clk_b4    => b4_osc,
-=======
->>>>>>> Joe
       clk_c5    => c5_osc);
 
   c4_out <= c4_osc and notes(0);
