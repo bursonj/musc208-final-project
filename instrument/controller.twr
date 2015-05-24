@@ -37,6 +37,7 @@ Clock clck to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
+<<<<<<< HEAD
 dac<0>      |        12.467(R)|      SLOW  |         5.687(R)|      FAST  |clck_BUFGP        |   0.000|
 dac<1>      |        12.510(R)|      SLOW  |         5.615(R)|      FAST  |clck_BUFGP        |   0.000|
 dac<2>      |        12.467(R)|      SLOW  |         5.435(R)|      FAST  |clck_BUFGP        |   0.000|
@@ -45,6 +46,16 @@ dac<4>      |        11.254(R)|      SLOW  |         4.706(R)|      FAST  |clck_
 dac<5>      |        11.397(R)|      SLOW  |         4.740(R)|      FAST  |clck_BUFGP        |   0.000|
 dac<6>      |        11.466(R)|      SLOW  |         4.639(R)|      FAST  |clck_BUFGP        |   0.000|
 dac<7>      |        11.233(R)|      SLOW  |         4.476(R)|      FAST  |clck_BUFGP        |   0.000|
+=======
+dac<0>      |        13.369(R)|      SLOW  |         5.627(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<1>      |        13.733(R)|      SLOW  |         5.640(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<2>      |        13.620(R)|      SLOW  |         5.549(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<3>      |        13.672(R)|      SLOW  |         5.601(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<4>      |        12.419(R)|      SLOW  |         4.821(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<5>      |        12.336(R)|      SLOW  |         4.794(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<6>      |        12.380(R)|      SLOW  |         4.759(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<7>      |        12.331(R)|      SLOW  |         4.726(R)|      FAST  |clck_BUFGP        |   0.000|
+>>>>>>> Joe
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clck
@@ -52,13 +63,18 @@ Clock to Setup on destination clock clck
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
+<<<<<<< HEAD
 clck           |    3.057|         |         |         |
+=======
+clck           |    3.576|         |         |         |
+>>>>>>> Joe
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
+<<<<<<< HEAD
 notes<0>       |dac<0>         |   11.930|
 notes<0>       |dac<1>         |   11.847|
 notes<0>       |dac<2>         |   11.937|
@@ -111,13 +127,83 @@ notes<5>       |dac<7>         |    9.238|
 
 
 Analysis completed Sun May 24 16:28:26 2015 
+=======
+notes<0>       |dac<0>         |   11.858|
+notes<0>       |dac<1>         |   11.924|
+notes<0>       |dac<2>         |   11.811|
+notes<0>       |dac<3>         |   11.863|
+notes<0>       |dac<4>         |   11.273|
+notes<0>       |dac<5>         |   11.162|
+notes<0>       |dac<6>         |   11.265|
+notes<0>       |dac<7>         |   11.216|
+notes<1>       |dac<0>         |   11.756|
+notes<1>       |dac<1>         |   11.817|
+notes<1>       |dac<2>         |   11.659|
+notes<1>       |dac<3>         |   11.705|
+notes<1>       |dac<4>         |   11.141|
+notes<1>       |dac<5>         |   11.030|
+notes<1>       |dac<6>         |   11.133|
+notes<1>       |dac<7>         |   11.084|
+notes<2>       |dac<0>         |   12.211|
+notes<2>       |dac<1>         |   12.575|
+notes<2>       |dac<2>         |   12.462|
+notes<2>       |dac<3>         |   12.514|
+notes<2>       |dac<4>         |   11.296|
+notes<2>       |dac<5>         |   11.185|
+notes<2>       |dac<6>         |   11.288|
+notes<2>       |dac<7>         |   11.239|
+notes<3>       |dac<0>         |   12.479|
+notes<3>       |dac<1>         |   12.843|
+notes<3>       |dac<2>         |   12.730|
+notes<3>       |dac<3>         |   12.782|
+notes<3>       |dac<4>         |   11.529|
+notes<3>       |dac<5>         |   11.446|
+notes<3>       |dac<6>         |   11.490|
+notes<3>       |dac<7>         |   11.441|
+notes<4>       |dac<0>         |   10.708|
+notes<4>       |dac<1>         |   11.192|
+notes<4>       |dac<2>         |   11.137|
+notes<4>       |dac<3>         |   11.642|
+notes<4>       |dac<4>         |   10.437|
+notes<4>       |dac<5>         |   10.354|
+notes<4>       |dac<6>         |   10.368|
+notes<4>       |dac<7>         |   10.302|
+notes<5>       |dac<0>         |   11.005|
+notes<5>       |dac<1>         |   11.066|
+notes<5>       |dac<2>         |   10.909|
+notes<5>       |dac<3>         |   11.404|
+notes<5>       |dac<4>         |   10.199|
+notes<5>       |dac<5>         |   10.116|
+notes<5>       |dac<6>         |   10.130|
+notes<5>       |dac<7>         |   10.064|
+notes<6>       |dac<0>         |   11.771|
+notes<6>       |dac<1>         |   12.062|
+notes<6>       |dac<2>         |   11.949|
+notes<6>       |dac<3>         |   12.001|
+notes<6>       |dac<4>         |   10.785|
+notes<6>       |dac<5>         |   10.702|
+notes<6>       |dac<6>         |   10.716|
+notes<6>       |dac<7>         |   10.650|
+notes<7>       |dac<0>         |   11.889|
+notes<7>       |dac<1>         |   12.180|
+notes<7>       |dac<2>         |   12.067|
+notes<7>       |dac<3>         |   12.119|
+notes<7>       |dac<4>         |   10.866|
+notes<7>       |dac<5>         |   10.783|
+notes<7>       |dac<6>         |   10.797|
+notes<7>       |dac<7>         |   10.731|
+---------------+---------------+---------+
+
+
+Analysis completed Sun May 24 17:32:28 2015 
+>>>>>>> Joe
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 141 MB
+Peak Memory Usage: 143 MB
 
 
 

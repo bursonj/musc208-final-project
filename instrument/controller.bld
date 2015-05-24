@@ -28,10 +28,17 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
+<<<<<<< HEAD
 Total memory usage is 107332 kilobytes
 
 Writing NGD file "controller.ngd" ...
 Total REAL time to NGDBUILD completion:  7 sec
+=======
+Total memory usage is 108236 kilobytes
+
+Writing NGD file "controller.ngd" ...
+Total REAL time to NGDBUILD completion:  6 sec
+>>>>>>> Joe
 Total CPU time to NGDBUILD completion:   3 sec
 
 Writing NGDBUILD log file "controller.bld"...

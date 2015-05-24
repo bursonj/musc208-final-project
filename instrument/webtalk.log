@@ -4,7 +4,11 @@ Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 Project Information
 --------------------
 ProjectID=084B54561F5493A5F1D8B518429895B8
+<<<<<<< HEAD
 ProjectIteration=5
+=======
+ProjectIteration=2
+>>>>>>> Joe
 
 WebTalk Summary
 ----------------

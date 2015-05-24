@@ -1,19 +1,14 @@
 //! **************************************************************************
+<<<<<<< HEAD
 // Written by: Map P.20131013 on Sun May 24 16:27:08 2015
+=======
+// Written by: Map P.20131013 on Sun May 24 17:31:20 2015
+>>>>>>> Joe
 //! **************************************************************************
 
 SCHEMATIC START;
-COMP "dac<9>" LOCATE = SITE "L4" LEVEL 1;
-COMP "dac<10>" LOCATE = SITE "K1" LEVEL 1;
 COMP "clck" LOCATE = SITE "V10" LEVEL 1;
-COMP "notes<0>" LOCATE = SITE "T5" LEVEL 1;
-COMP "notes<1>" LOCATE = SITE "V8" LEVEL 1;
-COMP "notes<2>" LOCATE = SITE "U8" LEVEL 1;
-COMP "notes<3>" LOCATE = SITE "N8" LEVEL 1;
-COMP "notes<4>" LOCATE = SITE "M8" LEVEL 1;
-COMP "notes<5>" LOCATE = SITE "V9" LEVEL 1;
-COMP "notes<6>" LOCATE = SITE "T9" LEVEL 1;
-COMP "notes<7>" LOCATE = SITE "T10" LEVEL 1;
+COMP "dac<10>" LOCATE = SITE "K1" LEVEL 1;
 COMP "dac<0>" LOCATE = SITE "E11" LEVEL 1;
 COMP "dac<1>" LOCATE = SITE "F11" LEVEL 1;
 COMP "dac<2>" LOCATE = SITE "F10" LEVEL 1;
@@ -23,5 +18,14 @@ COMP "dac<5>" LOCATE = SITE "K6" LEVEL 1;
 COMP "dac<6>" LOCATE = SITE "L7" LEVEL 1;
 COMP "dac<7>" LOCATE = SITE "H3" LEVEL 1;
 COMP "dac<8>" LOCATE = SITE "L3" LEVEL 1;
+COMP "dac<9>" LOCATE = SITE "L4" LEVEL 1;
+COMP "notes<0>" LOCATE = SITE "T5" LEVEL 1;
+COMP "notes<1>" LOCATE = SITE "V8" LEVEL 1;
+COMP "notes<2>" LOCATE = SITE "U8" LEVEL 1;
+COMP "notes<3>" LOCATE = SITE "N8" LEVEL 1;
+COMP "notes<4>" LOCATE = SITE "M8" LEVEL 1;
+COMP "notes<5>" LOCATE = SITE "V9" LEVEL 1;
+COMP "notes<6>" LOCATE = SITE "T9" LEVEL 1;
+COMP "notes<7>" LOCATE = SITE "T10" LEVEL 1;
 SCHEMATIC END;
 

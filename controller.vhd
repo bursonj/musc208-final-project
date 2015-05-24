@@ -12,10 +12,11 @@ end controller;
 
 architecture Behavioral of controller is
 
-  component scale_clock is
+  component scale_clock_c4 is
     port (
       clk_50Mhz : in  std_logic;
       rst       : in  std_logic;
+<<<<<<< HEAD
       clk_c4   : out std_logic;
       clk_d4   : out std_logic;
       clk_e4   : out std_logic;
@@ -25,6 +26,59 @@ architecture Behavioral of controller is
       clk_b4   : out std_logic;    
       clk_c5   : out std_logic);
   end component scale_clock;
+=======
+      clk_c4   : out std_logic);
+  end component scale_clock_c4;
+
+  component scale_clock_d4 is
+    port (
+      clk_50Mhz : in  std_logic;
+      rst       : in  std_logic;
+      clk_d4   : out std_logic);
+  end component scale_clock_d4;
+  
+  component scale_clock_e4 is
+    port (
+      clk_50Mhz : in  std_logic;
+      rst       : in  std_logic;
+      clk_e4   : out std_logic);
+  end component scale_clock_e4;
+  
+  component scale_clock_f4 is
+    port (
+      clk_50Mhz : in  std_logic;
+      rst       : in  std_logic;
+      clk_f4   : out std_logic);
+  end component scale_clock_f4;
+  
+  component scale_clock_g4 is
+    port (
+      clk_50Mhz : in  std_logic;
+      rst       : in  std_logic;
+      clk_g4   : out std_logic);
+  end component scale_clock_g4;
+  
+  component scale_clock_a4 is
+    port (
+      clk_50Mhz : in  std_logic;
+      rst       : in  std_logic;
+      clk_a4   : out std_logic);
+  end component scale_clock_a4;
+  
+  component scale_clock_b4 is
+    port (
+      clk_50Mhz : in  std_logic;
+      rst       : in  std_logic;
+      clk_b4   : out std_logic);
+  end component scale_clock_b4;
+  
+  component scale_clock_c5 is
+    port (
+      clk_50Mhz : in  std_logic;
+      rst       : in  std_logic;
+      clk_c5   : out std_logic);
+  end component scale_clock_c5 ;
+>>>>>>> Joe
 
   signal c4_osc : std_logic := '0';
   signal d4_osc : std_logic := '0';
@@ -56,10 +110,53 @@ architecture Behavioral of controller is
   
 begin
 
-  scale_clock_1 : entity work.scale_clock
+  scale_clock_c4_1 : entity work.scale_clock_c4
     port map (
       clk_50Mhz => clck,
       rst       => reseter,
+      clk_c4    => c4_osc);
+
+  scale_clock_d4_1: entity work.scale_clock_d4
+    port map (
+      clk_50Mhz => clck,
+      rst       => reseter,
+      clk_d4    => d4_osc);
+
+  scale_clock_e4_1: entity work.scale_clock_e4
+    port map (
+      clk_50Mhz => clck,
+      rst       => reseter,
+      clk_e4    => e4_osc);
+
+  scale_clock_f4_1: entity work.scale_clock_f4
+    port map (
+      clk_50Mhz => clck,
+      rst       => reseter,
+      clk_f4    => f4_osc);
+
+  scale_clock_g4_1: entity work.scale_clock_g4
+    port map (
+      clk_50Mhz => clck,
+      rst       => reseter,
+      clk_g4    => g4_osc);
+
+  scale_clock_a4_1: entity work.scale_clock_a4
+    port map (
+      clk_50Mhz => clck,
+      rst       => reseter,
+      clk_a4    => a4_osc);
+
+  scale_clock_b4_1: entity work.scale_clock_b4
+    port map (
+      clk_50Mhz => clck,
+      rst       => reseter,
+      clk_b4    => b4_osc);
+
+  scale_clock_c5_1: entity work.scale_clock_c5
+    port map (
+      clk_50Mhz => clck,
+      rst       => reseter,
+<<<<<<< HEAD
       clk_c4    => c4_osc,
       clk_d4    => d4_osc,
       clk_e4    => e4_osc,
@@ -67,6 +164,8 @@ begin
       clk_g4    => g4_osc,
       clk_a4    => a4_osc,
       clk_b4    => b4_osc,
+=======
+>>>>>>> Joe
       clk_c5    => c5_osc);
 
   c4_out <= c4_osc and notes(0);

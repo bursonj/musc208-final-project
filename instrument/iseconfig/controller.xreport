@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-05-24T13:50:17</DateModified>
+  <DateModified>2015-05-24T17:17:44</DateModified>
   <ModuleName>controller</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2015-05-24T17:17:25</SummaryTimeStamp>
   <SavedFilePath>/home/cal/Intstrument/instrument/iseconfig/controller.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/cal/Intstrument/instrument</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/cal/Intstrument/instrument/</ImplementationReportsDirectory>
   <DateInitialized>2015-05-24T13:50:16</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
