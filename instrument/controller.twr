@@ -37,14 +37,14 @@ Clock clck to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-dac<0>      |        10.298(R)|      SLOW  |         5.665(R)|      FAST  |clck_BUFGP        |   0.000|
-dac<1>      |        10.298(R)|      SLOW  |         5.665(R)|      FAST  |clck_BUFGP        |   0.000|
-dac<2>      |        10.084(R)|      SLOW  |         5.501(R)|      FAST  |clck_BUFGP        |   0.000|
-dac<3>      |        10.245(R)|      SLOW  |         5.598(R)|      FAST  |clck_BUFGP        |   0.000|
-dac<4>      |         8.753(R)|      SLOW  |         4.654(R)|      FAST  |clck_BUFGP        |   0.000|
-dac<5>      |         8.431(R)|      SLOW  |         4.460(R)|      FAST  |clck_BUFGP        |   0.000|
-dac<6>      |         8.592(R)|      SLOW  |         4.557(R)|      FAST  |clck_BUFGP        |   0.000|
-dac<7>      |         8.427(R)|      SLOW  |         4.482(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<0>      |        12.467(R)|      SLOW  |         5.687(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<1>      |        12.510(R)|      SLOW  |         5.615(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<2>      |        12.467(R)|      SLOW  |         5.435(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<3>      |        12.634(R)|      SLOW  |         5.545(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<4>      |        11.254(R)|      SLOW  |         4.706(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<5>      |        11.397(R)|      SLOW  |         4.740(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<6>      |        11.466(R)|      SLOW  |         4.639(R)|      FAST  |clck_BUFGP        |   0.000|
+dac<7>      |        11.233(R)|      SLOW  |         4.476(R)|      FAST  |clck_BUFGP        |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clck
@@ -52,25 +52,65 @@ Clock to Setup on destination clock clck
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clck           |    2.875|         |         |         |
+clck           |    3.057|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-notes<0>       |dac<0>         |   10.993|
-notes<0>       |dac<1>         |   10.993|
-notes<0>       |dac<2>         |   10.779|
-notes<0>       |dac<3>         |   10.940|
-notes<0>       |dac<4>         |    9.448|
-notes<0>       |dac<5>         |    9.126|
-notes<0>       |dac<6>         |    9.287|
-notes<0>       |dac<7>         |    9.122|
+notes<0>       |dac<0>         |   11.930|
+notes<0>       |dac<1>         |   11.847|
+notes<0>       |dac<2>         |   11.937|
+notes<0>       |dac<3>         |   12.130|
+notes<0>       |dac<4>         |   10.787|
+notes<0>       |dac<5>         |   10.960|
+notes<0>       |dac<6>         |   11.029|
+notes<0>       |dac<7>         |   10.796|
+notes<1>       |dac<0>         |   11.311|
+notes<1>       |dac<1>         |   11.415|
+notes<1>       |dac<2>         |   11.495|
+notes<1>       |dac<3>         |   11.688|
+notes<1>       |dac<4>         |   10.345|
+notes<1>       |dac<5>         |   10.518|
+notes<1>       |dac<6>         |   10.587|
+notes<1>       |dac<7>         |   10.354|
+notes<2>       |dac<0>         |   12.005|
+notes<2>       |dac<1>         |   12.048|
+notes<2>       |dac<2>         |   12.005|
+notes<2>       |dac<3>         |   12.172|
+notes<2>       |dac<4>         |   10.825|
+notes<2>       |dac<5>         |   10.998|
+notes<2>       |dac<6>         |   11.067|
+notes<2>       |dac<7>         |   10.834|
+notes<3>       |dac<0>         |   12.037|
+notes<3>       |dac<1>         |   12.080|
+notes<3>       |dac<2>         |   12.037|
+notes<3>       |dac<3>         |   12.204|
+notes<3>       |dac<4>         |   10.824|
+notes<3>       |dac<5>         |   10.967|
+notes<3>       |dac<6>         |   11.036|
+notes<3>       |dac<7>         |   10.803|
+notes<4>       |dac<0>         |   11.148|
+notes<4>       |dac<1>         |   11.065|
+notes<4>       |dac<2>         |   10.907|
+notes<4>       |dac<3>         |   11.098|
+notes<4>       |dac<4>         |    9.716|
+notes<4>       |dac<5>         |    9.774|
+notes<4>       |dac<6>         |    9.739|
+notes<4>       |dac<7>         |    9.504|
+notes<5>       |dac<0>         |   10.722|
+notes<5>       |dac<1>         |   10.729|
+notes<5>       |dac<2>         |   10.616|
+notes<5>       |dac<3>         |   10.813|
+notes<5>       |dac<4>         |    9.424|
+notes<5>       |dac<5>         |    9.482|
+notes<5>       |dac<6>         |    9.473|
+notes<5>       |dac<7>         |    9.238|
 ---------------+---------------+---------+
 
 
-Analysis completed Sun May 24 14:56:41 2015 
+Analysis completed Sun May 24 16:28:26 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:

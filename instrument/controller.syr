@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 0.01 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 0.01 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Reading design: controller.prj
@@ -120,14 +120,7 @@ Parsing architecture <Behavioral> of entity <controller>.
 =========================================================================
 
 Elaborating entity <controller> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:871 - "/home/cal/Intstrument/controller.vhd" Line 23: Using initial value '0' for d4_osc since it is never assigned
-WARNING:HDLCompiler:871 - "/home/cal/Intstrument/controller.vhd" Line 24: Using initial value '0' for e4_osc since it is never assigned
-WARNING:HDLCompiler:871 - "/home/cal/Intstrument/controller.vhd" Line 25: Using initial value '0' for f4_osc since it is never assigned
-WARNING:HDLCompiler:871 - "/home/cal/Intstrument/controller.vhd" Line 26: Using initial value '0' for g4_osc since it is never assigned
-WARNING:HDLCompiler:871 - "/home/cal/Intstrument/controller.vhd" Line 27: Using initial value '0' for a5_osc since it is never assigned
-WARNING:HDLCompiler:871 - "/home/cal/Intstrument/controller.vhd" Line 28: Using initial value '0' for b5_osc since it is never assigned
-WARNING:HDLCompiler:871 - "/home/cal/Intstrument/controller.vhd" Line 29: Using initial value '0' for c5_osc since it is never assigned
-WARNING:HDLCompiler:871 - "/home/cal/Intstrument/controller.vhd" Line 48: Using initial value '0' for reseter since it is never assigned
+WARNING:HDLCompiler:871 - "/home/cal/Intstrument/controller.vhd" Line 55: Using initial value '0' for reseter since it is never assigned
 
 Elaborating entity <scale_clock> (architecture <Behavioral>) from library <work>.
 
@@ -137,30 +130,58 @@ Elaborating entity <scale_clock> (architecture <Behavioral>) from library <work>
 
 Synthesizing Unit <controller>.
     Related source file is "/home/cal/Intstrument/controller.vhd".
-WARNING:Xst:647 - Input <notes<1:7>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit adder for signal <n0052> created at line 90.
+    Found 8-bit adder for signal <n0055> created at line 90.
+    Found 8-bit adder for signal <n0058> created at line 90.
+    Found 8-bit adder for signal <n0061> created at line 90.
+    Found 8-bit adder for signal <n0064> created at line 90.
+    Found 8-bit adder for signal <n0067> created at line 90.
+    Found 8-bit adder for signal <dac<7:0>> created at line 90.
     Summary:
-	no macro.
+	inferred   7 Adder/Subtractor(s).
 Unit <controller> synthesized.
 
 Synthesizing Unit <scale_clock>.
     Related source file is "/home/cal/Intstrument/scale_clock.vhd".
-    Found 24-bit register for signal <prescaler>.
-    Found 1-bit register for signal <clk_2Hz_i>.
-    Found 24-bit adder for signal <prescaler[23]_GND_5_o_add_1_OUT> created at line 28.
+    Found 1-bit register for signal <clk_d4_294Hz>.
+    Found 1-bit register for signal <clk_e4_330Hz>.
+    Found 1-bit register for signal <clk_f4_349Hz>.
+    Found 1-bit register for signal <clk_g4_392Hz>.
+    Found 1-bit register for signal <clk_a4_440Hz>.
+    Found 1-bit register for signal <clk_b4_494Hz>.
+    Found 1-bit register for signal <clk_c5_523Hz>.
+    Found 24-bit register for signal <prescaler_c4>.
+    Found 24-bit register for signal <prescaler_d4>.
+    Found 24-bit register for signal <prescaler_e4>.
+    Found 24-bit register for signal <prescaler_f4>.
+    Found 24-bit register for signal <prescaler_g4>.
+    Found 24-bit register for signal <prescaler_a4>.
+    Found 24-bit register for signal <prescaler_b4>.
+    Found 24-bit register for signal <prescaler_c5>.
+    Found 1-bit register for signal <clk_c4_262Hz>.
+    Found 24-bit adder for signal <prescaler_c4[23]_GND_5_o_add_26_OUT> created at line 101.
+    Found 24-bit adder for signal <prescaler_d4[23]_GND_5_o_add_27_OUT> created at line 102.
+    Found 24-bit adder for signal <prescaler_e4[23]_GND_5_o_add_28_OUT> created at line 103.
+    Found 24-bit adder for signal <prescaler_f4[23]_GND_5_o_add_29_OUT> created at line 104.
+    Found 24-bit adder for signal <prescaler_g4[23]_GND_5_o_add_30_OUT> created at line 105.
+    Found 24-bit adder for signal <prescaler_a4[23]_GND_5_o_add_31_OUT> created at line 106.
+    Found 24-bit adder for signal <prescaler_b4[23]_GND_5_o_add_32_OUT> created at line 107.
+    Found 24-bit adder for signal <prescaler_c5[23]_GND_5_o_add_33_OUT> created at line 108.
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  25 D-type flip-flop(s).
+	inferred   8 Adder/Subtractor(s).
+	inferred 200 D-type flip-flop(s).
 Unit <scale_clock> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 1
- 24-bit adder                                          : 1
-# Registers                                            : 2
- 1-bit register                                        : 1
- 24-bit register                                       : 1
+# Adders/Subtractors                                   : 15
+ 24-bit adder                                          : 8
+ 8-bit adder                                           : 7
+# Registers                                            : 16
+ 1-bit register                                        : 8
+ 24-bit register                                       : 8
 
 =========================================================================
 
@@ -169,32 +190,45 @@ Macro Statistics
 =========================================================================
 
 
+Synthesizing (advanced) Unit <controller>.
+	The following adders/subtractors are grouped into adder tree <Madd_dac<7:0>1> :
+ 	<Madd_n0052> in block <controller>, 	<Madd_n0055> in block <controller>, 	<Madd_n0058> in block <controller>, 	<Madd_n0061> in block <controller>, 	<Madd_n0064> in block <controller>, 	<Madd_n0067> in block <controller>, 	<Madd_dac<7:0>> in block <controller>.
+Unit <controller> synthesized (advanced).
+
 Synthesizing (advanced) Unit <scale_clock>.
-The following registers are absorbed into counter <prescaler>: 1 register on signal <prescaler>.
+The following registers are absorbed into counter <prescaler_c4>: 1 register on signal <prescaler_c4>.
+The following registers are absorbed into counter <prescaler_d4>: 1 register on signal <prescaler_d4>.
+The following registers are absorbed into counter <prescaler_f4>: 1 register on signal <prescaler_f4>.
+The following registers are absorbed into counter <prescaler_e4>: 1 register on signal <prescaler_e4>.
+The following registers are absorbed into counter <prescaler_g4>: 1 register on signal <prescaler_g4>.
+The following registers are absorbed into counter <prescaler_b4>: 1 register on signal <prescaler_b4>.
+The following registers are absorbed into counter <prescaler_a4>: 1 register on signal <prescaler_a4>.
+The following registers are absorbed into counter <prescaler_c5>: 1 register on signal <prescaler_c5>.
 Unit <scale_clock> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 1
- 24-bit up counter                                     : 1
-# Registers                                            : 1
- Flip-Flops                                            : 1
+# Adder Trees                                          : 1
+ 8-bit / 8-inputs adder tree                           : 1
+# Counters                                             : 8
+ 24-bit up counter                                     : 8
+# Registers                                            : 8
+ Flip-Flops                                            : 8
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+INFO:Xst:2146 - In block <scale_clock>, Counter <prescaler_c4> <prescaler_d4> <prescaler_f4> <prescaler_e4> <prescaler_g4> <prescaler_b4> <prescaler_a4> <prescaler_c5> are equivalent, XST will keep only <prescaler_c4>.
 
 Optimizing unit <controller> ...
-WARNING:Xst:1710 - FF/Latch <scale_clock_1/prescaler_18> (without init value) has a constant value of 0 in block <controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <scale_clock_1/prescaler_19> (without init value) has a constant value of 0 in block <controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <scale_clock_1/prescaler_20> (without init value) has a constant value of 0 in block <controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <scale_clock_1/prescaler_21> (without init value) has a constant value of 0 in block <controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <scale_clock_1/prescaler_22> (without init value) has a constant value of 0 in block <controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <scale_clock_1/prescaler_23> (without init value) has a constant value of 0 in block <controller>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <scale_clock> ...
+WARNING:Xst:1710 - FF/Latch <clk_b4_494Hz> (without init value) has a constant value of 0 in block <scale_clock>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clk_c5_523Hz> (without init value) has a constant value of 0 in block <scale_clock>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -206,8 +240,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 19
- Flip-Flops                                            : 19
+# Registers                                            : 30
+ Flip-Flops                                            : 30
 
 =========================================================================
 
@@ -230,22 +264,25 @@ Top Level Output File Name         : controller.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 78
+# BELS                             : 128
 #      GND                         : 1
 #      INV                         : 1
-#      LUT1                        : 17
-#      LUT2                        : 1
-#      LUT4                        : 19
-#      LUT6                        : 3
-#      MUXCY                       : 17
+#      LUT1                        : 23
+#      LUT2                        : 4
+#      LUT3                        : 5
+#      LUT4                        : 2
+#      LUT5                        : 11
+#      LUT6                        : 18
+#      MUXCY                       : 30
 #      VCC                         : 1
-#      XORCY                       : 18
-# FlipFlops/Latches                : 19
-#      FD                          : 19
+#      XORCY                       : 32
+# FlipFlops/Latches                : 30
+#      FD                          : 26
+#      FDE                         : 4
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 12
-#      IBUF                        : 1
+# IO Buffers                       : 17
+#      IBUF                        : 6
 #      OBUF                        : 11
 
 Device utilization summary:
@@ -255,20 +292,20 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              19  out of  18224     0%  
- Number of Slice LUTs:                   41  out of   9112     0%  
-    Number used as Logic:                41  out of   9112     0%  
+ Number of Slice Registers:              30  out of  18224     0%  
+ Number of Slice LUTs:                   64  out of   9112     0%  
+    Number used as Logic:                64  out of   9112     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     41
-   Number with an unused Flip Flop:      22  out of     41    53%  
-   Number with an unused LUT:             0  out of     41     0%  
-   Number of fully used LUT-FF pairs:    19  out of     41    46%  
-   Number of unique control sets:         1
+ Number of LUT Flip Flop pairs used:     64
+   Number with an unused Flip Flop:      34  out of     64    53%  
+   Number with an unused LUT:             0  out of     64     0%  
+   Number of fully used LUT-FF pairs:    30  out of     64    46%  
+   Number of unique control sets:         4
 
 IO Utilization: 
  Number of IOs:                          20
- Number of bonded IOBs:                  13  out of    232     5%  
+ Number of bonded IOBs:                  18  out of    232     7%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -294,7 +331,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clck                               | BUFGP                  | 19    |
+clck                               | BUFGP                  | 30    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -305,10 +342,10 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 3.238ns (Maximum Frequency: 308.809MHz)
+   Minimum period: 3.520ns (Maximum Frequency: 284.083MHz)
    Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: 4.744ns
-   Maximum combinational path delay: 5.379ns
+   Maximum output required time after clock: 7.502ns
+   Maximum combinational path delay: 8.226ns
 
 Timing Details:
 ---------------
@@ -316,65 +353,82 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clck'
-  Clock period: 3.238ns (frequency: 308.809MHz)
-  Total number of paths / destination ports: 514 / 19
+  Clock period: 3.520ns (frequency: 284.083MHz)
+  Total number of paths / destination ports: 452 / 34
 -------------------------------------------------------------------------
-Delay:               3.238ns (Levels of Logic = 2)
-  Source:            scale_clock_1/prescaler_11 (FF)
-  Destination:       scale_clock_1/clk_2Hz_i (FF)
+Delay:               3.520ns (Levels of Logic = 3)
+  Source:            scale_clock_1/prescaler_c4_15 (FF)
+  Destination:       scale_clock_1/clk_f4_349Hz (FF)
   Source Clock:      clck rising
   Destination Clock: clck rising
 
-  Data Path: scale_clock_1/prescaler_11 to scale_clock_1/clk_2Hz_i
+  Data Path: scale_clock_1/prescaler_c4_15 to scale_clock_1/clk_f4_349Hz
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.981  scale_clock_1/prescaler_11 (scale_clock_1/prescaler_11)
-     LUT6:I0->O           19   0.203   1.300  scale_clock_1/prescaler[23]_GND_5_o_equal_1_o<23>1 (scale_clock_1/prescaler[23]_GND_5_o_equal_1_o<23>)
-     LUT4:I1->O            1   0.205   0.000  scale_clock_1/clk_2Hz_i_rstpot (scale_clock_1/clk_2Hz_i_rstpot)
-     FD:D                      0.102          scale_clock_1/clk_2Hz_i
+     FD:C->Q               5   0.447   1.059  scale_clock_1/prescaler_c4_15 (scale_clock_1/prescaler_c4_15)
+     LUT6:I1->O            1   0.203   0.684  scale_clock_1/prescaler_c4[23]_GND_5_o_equal_1_o<23>1_SW1 (N16)
+     LUT6:I4->O            2   0.203   0.617  scale_clock_1/prescaler_e4[23]_GND_5_o_equal_7_o<23>11 (scale_clock_1/prescaler_e4[23]_GND_5_o_equal_7_o<23>1)
+     LUT3:I2->O            1   0.205   0.000  scale_clock_1/clk_e4_330Hz_rstpot (scale_clock_1/clk_e4_330Hz_rstpot)
+     FD:D                      0.102          scale_clock_1/clk_e4_330Hz
     ----------------------------------------
-    Total                      3.238ns (0.957ns logic, 2.281ns route)
-                                       (29.6% logic, 70.4% route)
+    Total                      3.520ns (1.160ns logic, 2.360ns route)
+                                       (33.0% logic, 67.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clck'
-  Total number of paths / destination ports: 8 / 8
+  Total number of paths / destination ports: 377 / 8
 -------------------------------------------------------------------------
-Offset:              4.744ns (Levels of Logic = 2)
-  Source:            scale_clock_1/clk_2Hz_i (FF)
+Offset:              7.502ns (Levels of Logic = 10)
+  Source:            scale_clock_1/clk_e4_330Hz (FF)
   Destination:       dac<7> (PAD)
   Source Clock:      clck rising
 
-  Data Path: scale_clock_1/clk_2Hz_i to dac<7>
+  Data Path: scale_clock_1/clk_e4_330Hz to dac<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.721  scale_clock_1/clk_2Hz_i (scale_clock_1/clk_2Hz_i)
-     LUT2:I0->O            8   0.203   0.802  c4_out1 (dac_0_OBUF)
+     FD:C->Q               3   0.447   0.898  scale_clock_1/clk_e4_330Hz (scale_clock_1/clk_e4_330Hz)
+     LUT4:I0->O            3   0.203   0.879  ADDERTREE_INTERNAL_Madd1_lut<0>1 (ADDERTREE_INTERNAL_Madd1_lut<0>)
+     LUT6:I3->O            6   0.205   1.089  ADDERTREE_INTERNAL_Madd2_xor<0>81 (ADDERTREE_INTERNAL_Madd_72)
+     LUT5:I0->O            1   0.203   0.000  ADDERTREE_INTERNAL_Madd6_lut<2>1 (ADDERTREE_INTERNAL_Madd6_lut<2>1)
+     MUXCY:S->O            1   0.172   0.000  ADDERTREE_INTERNAL_Madd6_cy<2> (ADDERTREE_INTERNAL_Madd6_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  ADDERTREE_INTERNAL_Madd6_cy<3> (ADDERTREE_INTERNAL_Madd6_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  ADDERTREE_INTERNAL_Madd6_cy<4> (ADDERTREE_INTERNAL_Madd6_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  ADDERTREE_INTERNAL_Madd6_cy<5> (ADDERTREE_INTERNAL_Madd6_cy<5>)
+     MUXCY:CI->O           0   0.019   0.000  ADDERTREE_INTERNAL_Madd6_cy<6> (ADDERTREE_INTERNAL_Madd6_cy<6>)
+     XORCY:CI->O           1   0.180   0.579  ADDERTREE_INTERNAL_Madd6_xor<7> (dac_7_OBUF)
      OBUF:I->O                 2.571          dac_7_OBUF (dac<7>)
     ----------------------------------------
-    Total                      4.744ns (3.221ns logic, 1.523ns route)
-                                       (67.9% logic, 32.1% route)
+    Total                      7.502ns (4.057ns logic, 3.445ns route)
+                                       (54.1% logic, 45.9% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 8 / 8
+  Total number of paths / destination ports: 377 / 8
 -------------------------------------------------------------------------
-Delay:               5.379ns (Levels of Logic = 3)
-  Source:            notes<0> (PAD)
+Delay:               8.226ns (Levels of Logic = 11)
+  Source:            notes<2> (PAD)
   Destination:       dac<7> (PAD)
 
-  Data Path: notes<0> to dac<7>
+  Data Path: notes<2> to dac<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.222   0.580  notes_0_IBUF (notes_0_IBUF)
-     LUT2:I1->O            8   0.205   0.802  c4_out1 (dac_0_OBUF)
+     IBUF:I->O             2   1.222   0.845  notes_2_IBUF (notes_2_IBUF)
+     LUT4:I1->O            3   0.205   0.879  ADDERTREE_INTERNAL_Madd1_lut<0>1 (ADDERTREE_INTERNAL_Madd1_lut<0>)
+     LUT6:I3->O            6   0.205   1.089  ADDERTREE_INTERNAL_Madd2_xor<0>81 (ADDERTREE_INTERNAL_Madd_72)
+     LUT5:I0->O            1   0.203   0.000  ADDERTREE_INTERNAL_Madd6_lut<2>1 (ADDERTREE_INTERNAL_Madd6_lut<2>1)
+     MUXCY:S->O            1   0.172   0.000  ADDERTREE_INTERNAL_Madd6_cy<2> (ADDERTREE_INTERNAL_Madd6_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  ADDERTREE_INTERNAL_Madd6_cy<3> (ADDERTREE_INTERNAL_Madd6_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  ADDERTREE_INTERNAL_Madd6_cy<4> (ADDERTREE_INTERNAL_Madd6_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  ADDERTREE_INTERNAL_Madd6_cy<5> (ADDERTREE_INTERNAL_Madd6_cy<5>)
+     MUXCY:CI->O           0   0.019   0.000  ADDERTREE_INTERNAL_Madd6_cy<6> (ADDERTREE_INTERNAL_Madd6_cy<6>)
+     XORCY:CI->O           1   0.180   0.579  ADDERTREE_INTERNAL_Madd6_xor<7> (dac_7_OBUF)
      OBUF:I->O                 2.571          dac_7_OBUF (dac<7>)
     ----------------------------------------
-    Total                      5.379ns (3.998ns logic, 1.381ns route)
-                                       (74.3% logic, 25.7% route)
+    Total                      8.226ns (4.834ns logic, 3.392ns route)
+                                       (58.8% logic, 41.2% route)
 
 =========================================================================
 
@@ -386,21 +440,21 @@ Clock to Setup on destination clock clck
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clck           |    3.238|         |         |         |
+clck           |    3.520|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 30.00 secs
-Total CPU time to Xst completion: 5.02 secs
+Total REAL time to Xst completion: 18.00 secs
+Total CPU time to Xst completion: 5.58 secs
  
 --> 
 
 
-Total memory usage is 127464 kilobytes
+Total memory usage is 128068 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   15 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 

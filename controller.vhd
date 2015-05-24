@@ -23,7 +23,7 @@ architecture Behavioral of controller is
       clk_g4   : out std_logic;
       clk_a4   : out std_logic;
       clk_b4   : out std_logic;    
-      clk_c5   : out std_logic;
+      clk_c5   : out std_logic);
   end component scale_clock;
 
   signal c4_osc : std_logic := '0';
@@ -60,7 +60,14 @@ begin
     port map (
       clk_50Mhz => clck,
       rst       => reseter,
-      clk_2Hz    => c4_osc);
+      clk_c4    => c4_osc,
+      clk_d4    => d4_osc,
+      clk_e4    => e4_osc,
+      clk_f4    => f4_osc,
+      clk_g4    => g4_osc,
+      clk_a4    => a4_osc,
+      clk_b4    => b4_osc,
+      clk_c5    => c5_osc);
 
   c4_out <= c4_osc and notes(0);
   d4_out <= d4_osc and notes(1);
@@ -76,10 +83,10 @@ begin
   e4_out2 <= "00000000" when e4_out = '0' else "11111111";
   f4_out2 <= "00000000" when f4_out = '0' else "11111111";
   g4_out2 <= "00000000" when g4_out = '0' else "11111111";
-  a5_out2 <= "00000000" when a5_out = '0' else "11111111";
-  b5_out2 <= "00000000" when b5_out = '0' else "11111111";
+  a4_out2 <= "00000000" when a4_out = '0' else "11111111";
+  b4_out2 <= "00000000" when b4_out = '0' else "11111111";
   c5_out2 <= "00000000" when c5_out = '0' else "11111111";
 
-  dac <= std_logic_vector(resize(unsigned(c4_out2) + unsigned(d4_out2) + unsigned(e4_out2) + unsigned(f4_out2) + unsigned(g4_out2) + unsigned(a5_out2) + unsigned(b5_out2) + unsigned(c5_out2), 11));
+  dac <= std_logic_vector(resize(unsigned(c4_out2) + unsigned(d4_out2) + unsigned(e4_out2) + unsigned(f4_out2) + unsigned(g4_out2) + unsigned(a4_out2) + unsigned(b4_out2) + unsigned(c5_out2), 11));
   
 end Behavioral;
