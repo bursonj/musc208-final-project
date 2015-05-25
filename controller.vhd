@@ -86,14 +86,14 @@ architecture Behavioral of controller is
   signal b4_out : std_logic := '0';
   signal c5_out : std_logic := '0';
 
-  signal c4_out2 : std_logic_vector(0 to 7);
-  signal d4_out2 : std_logic_vector(0 to 7);
-  signal e4_out2 : std_logic_vector(0 to 7);
-  signal f4_out2 : std_logic_vector(0 to 7);
-  signal g4_out2 : std_logic_vector(0 to 7);
-  signal a4_out2 : std_logic_vector(0 to 7);
-  signal b4_out2 : std_logic_vector(0 to 7);
-  signal c5_out2 : std_logic_vector(0 to 7);
+  signal c4_out2 : std_logic_vector(10 downto 0);
+  signal d4_out2 : std_logic_vector(10 downto 0);
+  signal e4_out2 : std_logic_vector(10 downto 0);
+  signal f4_out2 : std_logic_vector(10 downto 0);
+  signal g4_out2 : std_logic_vector(10 downto 0);
+  signal a4_out2 : std_logic_vector(10 downto 0);
+  signal b4_out2 : std_logic_vector(10 downto 0);
+  signal c5_out2 : std_logic_vector(10 downto 0);
 
   signal reseter : std_logic := '0';
   
@@ -156,15 +156,15 @@ begin
   b4_out <= b4_osc and notes(6);
   c5_out <= c5_osc and notes(7);
 
-  c4_out2 <= "00000000" when c4_out = '0' else "11111111";
-  d4_out2 <= "00000000" when d4_out = '0' else "11111111";
-  e4_out2 <= "00000000" when e4_out = '0' else "11111111";
-  f4_out2 <= "00000000" when f4_out = '0' else "11111111";
-  g4_out2 <= "00000000" when g4_out = '0' else "11111111";
-  a4_out2 <= "00000000" when a4_out = '0' else "11111111";
-  b4_out2 <= "00000000" when b4_out = '0' else "11111111";
-  c5_out2 <= "00000000" when c5_out = '0' else "11111111";
+  c4_out2 <= "00000000000" when c4_out = '0' else "00011111111";
+  d4_out2 <= "00000000000" when d4_out = '0' else "00011111111";
+  e4_out2 <= "00000000000" when e4_out = '0' else "00011111111";
+  f4_out2 <= "00000000000" when f4_out = '0' else "00011111111";
+  g4_out2 <= "00000000000" when g4_out = '0' else "00011111111";
+  a4_out2 <= "00000000000" when a4_out = '0' else "00011111111";
+  b4_out2 <= "00000000000" when b4_out = '0' else "00011111111";
+  c5_out2 <= "00000000000" when c5_out = '0' else "00011111111";
 
-  dac <= std_logic_vector(resize(unsigned(c4_out2) + unsigned(d4_out2) + unsigned(e4_out2) + unsigned(f4_out2) + unsigned(g4_out2) + unsigned(a4_out2) + unsigned(b4_out2) + unsigned(c5_out2), 11));
+  dac <= std_logic_vector(unsigned(c4_out2) + unsigned(d4_out2) + unsigned(e4_out2) + unsigned(f4_out2) + unsigned(g4_out2) + unsigned(a4_out2) + unsigned(b4_out2) + unsigned(c5_out2));
   
 end Behavioral;
