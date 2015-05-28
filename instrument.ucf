@@ -20,3 +20,19 @@ NET "dac(3)" LOC = "H3";
 NET "dac(2)" LOC = "L3";
 NET "dac(1)" LOC = "L4";
 NET "dac(0)" LOC = "K1";
+
+NET "oct_up" LOC = "A8";
+NET "oct_down" LOC = "C9";
+
+NET "display_anodes(3)" LOC = "N16";
+NET "display_anodes(2)" LOC = "N15";
+NET "display_anodes(1)" LOC = "P18";
+NET "display_anodes(0)" LOC = "P17";
+
+NET "display_outputs(0)" LOC = "T17";
+NET "display_outputs(1)" LOC = "T18";
+NET "display_outputs(2)" LOC = "U17";
+NET "display_outputs(3)" LOC = "U18";
+NET "display_outputs(4)" LOC = "M14";
+NET "display_outputs(5)" LOC = "N14";
+NET "display_outputs(6)" LOC = "L14";
