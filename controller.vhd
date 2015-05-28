@@ -297,6 +297,6 @@ begin
     end if;
   end process;
 
-  octave_num <= std_logic_vector('0' & oct_sel);
+  octave_num <= std_logic_vector('0' & (oct_sel + "1"));
 
 end Behavioral;

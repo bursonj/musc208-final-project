@@ -20,8 +20,8 @@ begin
     if rst = '1' then
       clk_2349Hz_i   <= '0';
       prescaler   <= (others => '0');
-    elsif clk_50Mhz'event then   -- rising clock edge
-      if prescaler = X"353" then     -- 190 840 in hex
+    elsif rising_edge(clk_50Mhz) then   -- rising clock edge
+      if prescaler = X"5326" then     -- 190 840 in hex
         prescaler   <= (others => '0');
         clk_2349Hz_i   <= not clk_2349Hz_i;
       else
