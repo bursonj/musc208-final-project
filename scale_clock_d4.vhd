@@ -15,13 +15,15 @@ architecture Behavioral of scale_clock_d is
   signal clk_2349Hz_i : std_logic;
 begin
 
+  -- this creates a square wave with the frequency
+  -- of D7
   gen_clk : process (clk_50Mhz, rst)
   begin  -- process gen_clk
     if rst = '1' then
       clk_2349Hz_i   <= '0';
       prescaler   <= (others => '0');
-    elsif rising_edge(clk_50Mhz) then   -- rising clock edge
-      if prescaler = X"5326" then     -- 190 840 in hex
+    elsif rising_edge(clk_50Mhz) then
+      if prescaler = X"5326" then    
         prescaler   <= (others => '0');
         clk_2349Hz_i   <= not clk_2349Hz_i;
       else

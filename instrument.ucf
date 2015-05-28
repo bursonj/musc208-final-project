@@ -1,3 +1,5 @@
+#this files maps inputs and outputs in our code
+#to physical locations on the FPGA
 NET "clck" LOC = "V10";
 
 NET "notes(0)" LOC = "T5";

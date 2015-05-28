@@ -14,6 +14,9 @@ end controller;
 
 architecture Behavioral of controller is
 
+  -- all of the components and wires needed for the controller
+  -- are declared here
+  -- further descriptions of each at instantiation
   component scale_clock_clow is
     port (
       clk_50Mhz : in  std_logic;
@@ -146,6 +149,8 @@ architecture Behavioral of controller is
 
 begin
 
+  -- these are the eight oscillators, each outputs the highest pitch
+  -- of the respective note
   scale_clock_clow_1 : entity work.scale_clock_clow
     port map (
       clk_50Mhz => clck,
@@ -194,6 +199,10 @@ begin
       rst       => reseter,
       clk_chi   => chi_osc);
 
+  -- there is one octave chooser for each of the eight notes
+  -- the chooser produces waveforms in each octave
+  -- of the relevant note and uses the selector to
+  -- decide which pitch to output
   octave_chooser_1 : entity work.octave_chooser
     port map (
       in_clock  => clow_osc,
@@ -242,6 +251,8 @@ begin
       selector  => oct_sel,
       out_clock => chi_scale);
 
+  --the debouncers ignore bounce in the octave switch buttons
+  --because the buttons are not very good
   debouncer_1 : entity work.debouncer
     port map (
       clk       => clck,
@@ -254,6 +265,8 @@ begin
       buttonin  => oct_down,
       buttonout => down_debounced);
 
+  --this drives the seven segment display so we can
+  --show the current octave on the screen
   displayDifferent_1 : entity work.displayDifferent
     port map (
       inputs1 => octave_num,
@@ -264,6 +277,8 @@ begin
       anodes  => display_anodes,
       CLCK    => clck);
 
+  --each note is only output when the switch is on
+  -- the notes vector is just the different switches
   clow_out <= clow_scale and notes(0);
   d_out    <= d_scale and notes(1);
   e_out    <= e_scale and notes(2);
@@ -273,6 +288,7 @@ begin
   b_out    <= b_scale and notes(6);
   chi_out  <= chi_scale and notes(7);
 
+  -- converts the one bit oscillator to 11 bits for the dac
   clow_out2 <= "00000000000" when clow_out = '0' else "00011111111";
   d_out2    <= "00000000000" when d_out = '0'    else "00011111111";
   e_out2    <= "00000000000" when e_out = '0'    else "00011111111";
@@ -282,8 +298,10 @@ begin
   b_out2    <= "00000000000" when b_out = '0'    else "00011111111";
   chi_out2  <= "00000000000" when chi_out = '0'  else "00011111111";
 
+  -- adds all the waveforms together for final output
   dac <= std_logic_vector(unsigned(clow_out2) + unsigned(d_out2) + unsigned(e_out2) + unsigned(f_out2) + unsigned(g_out2) + unsigned(a_out2) + unsigned(b_out2) + unsigned(chi_out2));
 
+  -- changes octave on button press
   change_sel <= up_debounced or down_debounced;
 
   changer : process(change_sel, up_debounced, oct_sel)

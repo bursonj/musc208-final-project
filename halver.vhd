@@ -9,6 +9,10 @@ end halver;
 
 architecture Behavioral of halver is
 
+  --halves the frequency of an input wave
+  --by outputting a new wave that switches
+  --switches between high and low, once per
+  --period of the input wave
 begin
   track : process(in_line)
   begin

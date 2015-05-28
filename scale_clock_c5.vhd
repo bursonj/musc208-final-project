@@ -15,13 +15,15 @@ architecture Behavioral of scale_clock_chi is
   signal clk_4186Hz_i : std_logic;
 begin
 
+  --this creates a square wave with
+  --a frequency of C8
   gen_clk : process (clk_50Mhz, rst)
   begin  -- process gen_clk
     if rst = '1' then
       clk_4186Hz_i   <= '0';
       prescaler   <= (others => '0');
-    elsif rising_edge(clk_50Mhz) then   -- rising clock edge
-      if prescaler = X"2EA9" then     -- 190 840 in hex
+    elsif rising_edge(clk_50Mhz) then 
+      if prescaler = X"2EA9" then    
         prescaler   <= (others => '0');
         clk_4186Hz_i   <= not clk_4186Hz_i;
       else

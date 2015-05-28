@@ -2,6 +2,9 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.all;
 
+-- this creates a clock speed with the
+-- proper speed to drive the seven segement
+-- display
 entity scale_clock is
   port (
     clk_50Mhz : in  std_logic;
@@ -20,8 +23,8 @@ begin
     if rst = '1' then
       clk_2Hz_i   <= '0';
       prescaler   <= (others => '0');
-    elsif rising_edge(clk_50Mhz) then   -- rising clock edge
-      if prescaler = X"BC20" then     -- 12 500 000 in hex
+    elsif rising_edge(clk_50Mhz) then 
+      if prescaler = X"BC20" then    
         prescaler   <= (others => '0');
         clk_2Hz_i   <= not clk_2Hz_i;
       else

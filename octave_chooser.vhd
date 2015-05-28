@@ -20,6 +20,10 @@ architecture Behavioral of octave_chooser is
 
 begin
 
+  --we have seven components to halve
+  --the frequency of the wave, in order
+  --to drop an octave. each feeds into
+  --the next one and to a final selecter
   halver_1 : entity work.halver
     port map (
       in_line  => in_clock,
@@ -52,6 +56,8 @@ begin
 
   mux_in(0) <= in_clock;
 
+  --based on a selection input this chooses
+  --which octave to output in
   with selector select out_clock <=
     mux_in(0) when "110",
     mux_in(1) when "101",
